@@ -13,11 +13,17 @@ Spring boot framework with Selenium automation testing tool to perform UI automa
   - location of source code: ```src/main/java/com/example/JavaSpringBoot/page```
 - [x] Integration with GitHub Actions
   - tests will run on push to master in GitHub servers
+- [x] Ability to run tests locally and in Selenium Grid 
   
 ## Tests
 
 Running using maven from command line
-- to run using 
+- Locally: 
   - chrome```mvn clean test -Dbrowser=chrome```
   - edge ```mvn clean test -Dbrowser=edge```
   - ```mvn clean test``` will run using default browser in properties file
+- With Selenium grid:
+  - launch grid using docker compose (easy) or manually
+  - use command to use default browser chrome : ```mvn clean test -Dspring.profiles.active=remote```
+  - run with firefox in grid: ```mvn clean test -Dspring.profiles.active=remote -Dbrowser=firefox```
+  - run with firefox in grid in qa env: ```mvn clean test -Dspring.profiles.active=remote,qa -Dbrowser=firefox```
