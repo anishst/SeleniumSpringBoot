@@ -24,5 +24,5 @@ jobs:
     - name: Build with Maven
       run:   mvn test
       env:
-        CLOUD_RUN_FLAG = "Yes"
+        CLOUD_RUN_FLAG: "Yes"
 
