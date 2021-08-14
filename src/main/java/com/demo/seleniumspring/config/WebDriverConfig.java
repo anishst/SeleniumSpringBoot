@@ -15,9 +15,6 @@ import org.springframework.context.annotation.*;
 @Profile("!remote") // to avoid loading for remote runs
 public class WebDriverConfig {
 
-    @Value("${default.timeout:30}")
-    private  int timeout;
-
     @Bean
     @ConditionalOnProperty(name = "browser", havingValue = "edge")
     public WebDriver edgeDriver() {
@@ -48,11 +45,5 @@ public class WebDriverConfig {
         }
     }
 
-
-
-    @Bean
-    public WebDriverWait webDriverWait(WebDriver driver) {
-        return new WebDriverWait(driver, this.timeout);
-    }
 
 }
