@@ -19,7 +19,7 @@ public class GooglePage extends Base {
     private String url;
 
     //launch website
-    public void goTo(){
+    public void goToGooglePage(){
         this.driver.get(url);
     }
 
