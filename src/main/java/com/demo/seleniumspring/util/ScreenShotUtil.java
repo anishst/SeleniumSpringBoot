@@ -27,12 +27,14 @@ public class ScreenShotUtil {
 
     public void takeScreenShot(final String imgName) throws IOException {
         // takes screenshot as saves to path in app properties file using given imgName ex. test.png
-        try {
-            File sourceFile = this.driver.getScreenshotAs(OutputType.FILE);
-            FileCopyUtils.copy(sourceFile, this.path.resolve(imgName).toFile());
-            System.out.println("Saving screenshot to " + path);
-        } catch (Exception e){
-            System.out.println("Something went wrong with screenshot capture" + e);
+        if (System.getenv("CLOUD_RUN_FLAG") == null) {
+            try {
+                File sourceFile = this.driver.getScreenshotAs(OutputType.FILE);
+                FileCopyUtils.copy(sourceFile, this.path.resolve(imgName).toFile());
+                System.out.println("Saving screenshot to " + path);
+            } catch (Exception e) {
+                System.out.println("Something went wrong with screenshot capture" + e);
+            }
         }
 
 
