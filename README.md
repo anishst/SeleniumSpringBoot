@@ -14,3 +14,10 @@ Spring boot framework with Selenium automation testing tool to perform UI automa
 - [x] Integration with GitHub Actions
   - tests will run on push to master in GitHub servers
   
+## Tests
+
+Running using maven from command line
+- to run using 
+  - chrome```mvn clean test -Dbrowser=chrome```
+  - edge ```mvn clean test -Dbrowser=edge```
+  - ```mvn clean test``` will run using default browser in properties file
