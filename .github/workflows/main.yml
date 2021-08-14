@@ -23,3 +23,6 @@ jobs:
         distribution: 'adopt'
     - name: Build with Maven
       run:   mvn test
+      env:
+        CLOUD_RUN_FLAG = "Yes"
+

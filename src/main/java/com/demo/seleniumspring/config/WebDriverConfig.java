@@ -18,11 +18,17 @@ public class WebDriverConfig {
     @Bean
     public WebDriver chromeDriver() {
         // this is the bean class for chrome driver
-        WebDriverManager.chromedriver().setup();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--no-sandbox");
-        options.addArguments("--headless");
-        return new ChromeDriver(options=options);
+
+        if (System.getenv("CLOUD_RUN_FLAG") == null) {
+            WebDriverManager.chromedriver().setup();
+           return new ChromeDriver();
+        } else {
+            WebDriverManager.chromedriver().setup();
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--no-sandbox");
+            options.addArguments("--headless");
+            return new ChromeDriver(options = options);
+        }
     }
 
     @Bean
