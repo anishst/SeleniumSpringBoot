@@ -24,6 +24,11 @@ Running using maven from command line
   - ```mvn clean test``` will run using default browser in properties file
 - With Selenium grid:
   - launch grid using docker compose (easy) or manually
+    - [Grid GUI Console](http://192.168.1.50:4444/grid/console)
+    - [Grid URL](http://192.168.1.50:4444/wd/hub)
   - use command to use default browser chrome : ```mvn clean test -Dspring.profiles.active=remote```
   - run with firefox in grid: ```mvn clean test -Dspring.profiles.active=remote -Dbrowser=firefox```
   - run with firefox in grid in qa env: ```mvn clean test -Dspring.profiles.active=remote,qa -Dbrowser=firefox```
+  
+- Parallel tests using testng-suite.xml
+  - adjust suite to run parallel/sequential

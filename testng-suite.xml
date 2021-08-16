@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="spring-boot" parallel="tests" thread-count="2">
+<!--
+<suite name="spring-boot" parallel="tests">  // for parallel run
+<suite name="spring-boot" parallel="none">  // for sequential run
+<suite name="spring-boot" parallel="tests", thread-count="2">  // parallel run; only 2 threads at a time
+-->
+    <test name="test-1">
+        <classes>
+            <class name="com.demo.seleniumspring.googletests.GoogleSearch1Test"/>
+        </classes>
+    </test> <!-- Test -->
+    <test name="test-2">
+        <classes>
+            <class name="com.demo.seleniumspring.googletests.GoogleSearch2Test"/>
+        </classes>
+    </test>
+    <test name="test-3">
+        <classes>
+            <class name="com.demo.seleniumspring.googletests.GoogleSearch1Test"/>
+        </classes>
+    </test> <!-- Test -->
+    <test name="test-4">
+        <classes>
+            <class name="com.demo.seleniumspring.googletests.GoogleSearch2Test"/>
+        </classes>
+    </test>
+
+</suite> <!-- Suite -->

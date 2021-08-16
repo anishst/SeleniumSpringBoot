@@ -22,7 +22,5 @@ public abstract class Base {
 
     public abstract boolean isAt();
 
-    public void close(){
-        this.driver.quit();
-    }
+
 }

@@ -29,7 +29,7 @@ public class WebDriverConfig {
     @Bean
     // @Primary // this will be the default browser
     @ConditionalOnMissingBean // to catch invalid browser values
-    // @ConditionalOnProperty(name = "browser", havingValue = "chrome") // run when property is set to chrome
+    @Scope("browserscope") // use custom scope
     public WebDriver chromeDriver() {
         // this is the bean class for chrome driver
 

@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 
-public class GoogleTest extends SpringBaseTestNGTest {
+public class GoogleSearch2Test extends SpringBaseTestNGTest {
 
     @Autowired
     private GooglePage googlePage;
@@ -24,14 +24,14 @@ public class GoogleTest extends SpringBaseTestNGTest {
         this.googlePage.goToGooglePage();
         Assert.assertTrue(this.googlePage.isAt());
 
-        this.googlePage.getSearchComponent().search("spring boot");
+        this.googlePage.getSearchComponent().search("Selenium");
         Assert.assertTrue(this.googlePage.getSearchResult().isAt());
         Assert.assertTrue(this.googlePage.getSearchResult().getCount() > 2);
         System.out.println("Number of Results: " + this.googlePage.getSearchResult().getCount());
         // wait 3 seconds
-        Thread.sleep(3000);
+        // Thread.sleep(3000);
         //take screenshot
-        this.screenShotUtil.takeScreenShot("Test.png");
-        this.googlePage.close();
+        //this.screenShotUtil.takeScreenShot("Test.png");
+        //this.googlePage.close();
     }
 }
